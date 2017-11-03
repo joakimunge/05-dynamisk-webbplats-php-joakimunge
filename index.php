@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 use Blog\Core\Database;
 use Blog\Core\Router;
 use Blog\Core\Request;
+use Blog\Controllers\AbstractController;
 
 
 function autoloader($classname) {
