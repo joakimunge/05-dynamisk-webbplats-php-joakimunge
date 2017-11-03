@@ -2,6 +2,8 @@
 
 namespace Blog\Controllers;
 
+use Blog\Core\Request;
+
 abstract class AbstractController {
 
     protected $request;
