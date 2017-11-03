@@ -1,5 +1,7 @@
 <?php 
 
+namespace Blog\Core;
+
 class Request {
     
     protected $path;
