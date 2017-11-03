@@ -20,4 +20,12 @@ function autoloader($classname) {
 
 spl_autoload_register('autoloader');
 
+
+var_dump($_SERVER);
+var_dump($_SERVER['REQUEST_URI']);
+var_dump(parse_url($_SERVER['REQUEST_URI']));
+
+$request = new Request();
+$router = new Router($request);
+
 ?>
