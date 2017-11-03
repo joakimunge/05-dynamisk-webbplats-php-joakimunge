@@ -12,14 +12,14 @@ class Request {
     public function __construct() {
         $parsedUrl = parse_url($_SERVER['REQUEST_URI']);
         $this->path = $parsedUrl['path'];
-
+        $this->requestMethod = $_SERVER['REQUEST_METHOD'];
     }
     
-    public getPath() {
+    public function getPath() {
         return $this->path;
     }
 
-    public getRequestMethod() {
+    public function getRequestMethod() {
         return $this->requestMethod;
     }
 }

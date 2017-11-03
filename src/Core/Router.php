@@ -1,6 +1,9 @@
 <?php 
 
 namespace Blog\Core;
+use Blog\Controllers\AbstractController;
+use Blog\Controllers\IndexController;
+
 
 class Router {
 
@@ -21,9 +24,10 @@ class Router {
 
     public function dispatch() {
         foreach($this->routes as $route) {
-            if ($this->request->getPath() === route[0] && $this->request->getRequestMethod() === route[3]) {
+            if ($this->request->getPath() === $route[0] && $this->request->getRequestMethod() === $route[3]) {
                 require_once(__DIR__ . '/../Controllers/' . $route[1] . '.php');
-                $controller = new $route[1]($this->request);
+                $controllerFqdn = "\\Blog\\Controllers\\" . $route[1];
+                $controller = new $controllerFqdn($this->request);
                 $controller->{$route[2]}();
             }
         }
