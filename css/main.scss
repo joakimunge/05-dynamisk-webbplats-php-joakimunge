@@ -1,0 +1,89 @@
+@import "../dist/scss/kube.scss";
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+
+// Colors
+$pale-silver: #CCC5B9;
+$black-olive: #403D39;
+$raisin-black: #252422;
+$vermilion: #EB5E28;
+$blue: rgba(115, 89, 229, 1);
+$granite: rgba(104, 100, 112, 1);
+$white: rgba(255, 255, 255, 1);
+$pink: rgba(229, 68, 109, 1);
+$navy: rgba(75, 82, 103, 1);
+$font-stack: 'Lato', sans-serif;
+$bold: 700;
+$semi-bold: 600;
+$regular: 400;
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    background-color: $white;
+    color: $raisin-black;
+    font-family: $font-stack;
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+header#top {
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2em;
+    height:5em;
+    background-color: $black-olive;
+    color: $white;
+
+    a {
+        font-weight: $bold;
+    }
+
+    ul {
+        display:flex;
+        li {
+            display:inline-block;
+            padding:1em;
+        }
+
+        li:last-child {
+            padding-right:0;
+        }
+    }
+}
+
+.button {
+    margin: 0 0 0 1em;
+}
+
+#top-login {
+    justify-self: flex-start;
+}
+
+#top-navigation {
+    display:flex;
+    align-items: center;
+}
+
+main {
+    flex:1;
+}
+
+footer#bottom {
+    width: 100%;
+    background-color: $raisin-black;
+    display: flex;
+    justify-content: center;
+    min-height:10em;
+}
+
+
+
+

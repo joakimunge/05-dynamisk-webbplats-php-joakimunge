@@ -1,5 +1,8 @@
-<?php 
+<footer id="bottom">
+    <div id="bottom-signoff">
+        <h4>Joakim Unge</h4>
+    </div>
+</footer>
 
-echo 'This is the footer!'
-
-?>
+</body>
+</html>

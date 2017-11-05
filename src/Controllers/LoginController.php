@@ -1,12 +1,13 @@
 <?php 
 
 namespace Blog\Controllers;
+use Blog\Controllers\AbstractController;
+use Blog\Core\Database;
 
 class LoginController extends AbstractController {
 
     public function login() {
-        var_dump('Herro, LoginController served me!');
-        $this->render('login.php');
+        $this->render('login');
         $db = new Database();
     }
 

@@ -1,5 +1,2 @@
-<?php 
-
-echo 'And I am the FRONTPAGE!';
-
-?>
+<main class="content">
+</main>

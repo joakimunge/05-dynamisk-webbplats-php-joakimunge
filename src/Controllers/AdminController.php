@@ -1,14 +1,14 @@
 <?php 
 
 namespace Blog\Controllers;
+use Blog\Controllers\AbstractController;
+use Blog\Core\Database;
 
 class AdminController extends AbstractController {
 
     public function admin() {
-        var_dump('Herro, AdminController served me!');
-        $this->render('admin.php');
+        $this->render('admin');
         $db = new Database();
-        var_dump($db);
     }
 
 }
