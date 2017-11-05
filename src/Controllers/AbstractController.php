@@ -17,9 +17,9 @@ abstract class AbstractController {
         extract($params);
 
         ob_start();
-        include __DIR__ . '/../Views/_header.php';
-        include __DIR__ . '/../Views/' . $template . '.php';
-        include __DIR__ . '/../Views/_footer.php';
+        include __DIR__ . '/../Templates/_header.php';
+        include __DIR__ . '/../Templates/' . $template . '.php';
+        include __DIR__ . '/../Templates/_footer.php';
         $renderedView = ob_get_clean();
 
         echo $renderedView;

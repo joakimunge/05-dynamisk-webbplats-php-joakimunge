@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Header</title>
+    <title><?php echo $title ?></title>
     <link rel="stylesheet" href="dist/css/kube.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="https://use.fontawesome.com/9ddb80cf53.js"></script>
