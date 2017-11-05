@@ -42,8 +42,69 @@ header#top {
   display: flex;
   align-items: center; }
 
-main {
+main.container {
   flex: 1; }
+
+.content {
+  margin: 0 auto;
+  max-width: 1170px; }
+
+.tags {
+  display: flex;
+  align-items: center;
+  min-height: 5em;
+  justify-content: center; }
+
+ul.tags__list {
+  list-style: none;
+  display: flex;
+  margin-top: 24px; }
+  ul.tags__list li {
+    display: inline-block;
+    margin-right: 2em; }
+  ul.tags__list li:last-child {
+    margin-right: 0; }
+
+a.tags__btn {
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  border-radius: 25px;
+  padding: 0.5em;
+  border: 2px solid #7359e5;
+  color: #7359e5;
+  font-size: 12px; }
+
+a.tags__btn:hover {
+  background-color: #7359e5;
+  color: #FFF; }
+
+.blog {
+  padding-top: 2em; }
+
+.blog__post {
+  border: 1px solid #ececec;
+  border-radius: 5px;
+  color: #CCC5B9;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.35); }
+
+.blog__post-image {
+  overflow: hidden; }
+
+.blog__post-title {
+  font-weight: 700; }
+
+.blog__post-author {
+  font-size: 12px;
+  color: #e5446d;
+  margin: 0px; }
+
+.blog__post-timestamp {
+  font-size: 10px;
+  color: #CCC5B9; }
+
+.blog__post-content {
+  padding: 1.5em; }
 
 footer#bottom {
   width: 100%;
