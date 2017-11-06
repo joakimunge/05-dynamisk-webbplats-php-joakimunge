@@ -104,7 +104,9 @@ a.tags__btn:hover {
   color: #CCC5B9; }
 
 .blog__post-content {
-  padding: 1.5em; }
+  padding: 1.5em;
+  overflow-wrap: break-word;
+}
 
 footer#bottom {
   width: 100%;

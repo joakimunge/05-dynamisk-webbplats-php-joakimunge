@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -30,6 +30,8 @@ $router = new Router($request);
 $router->get('/', 'IndexController', 'index');
 $router->get('/login', 'LoginController', 'login');
 $router->get('/admin', 'AdminController', 'admin');
+$router->get('/add', 'AddnewController', 'add');
+$router->post('/submit', 'SubmitController', 'submit');
 
 $router->dispatch();
 

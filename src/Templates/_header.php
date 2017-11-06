@@ -17,11 +17,12 @@
         <a href="#">__header</a>
     </div>
     <nav id="top-navigation">
-        <ul>
+        <!-- <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Blog</a></li>       
-        </ul>
+        </ul> -->
         <nav id="top-login">
+                <a href="/add" class="button primary">Submit new post!</a>
                 <a href="#" class="button outline inverted">Login</a>
                 <a href="#" class="button">Sign up!</a>
         </nav>

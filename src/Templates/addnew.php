@@ -1,0 +1,36 @@
+<main class="container">
+    <section class="content">
+        <section class="row">
+            <div class="col col-6">
+                <form method="POST" action="/submit" class="form" enctype="multipart/form-data">
+
+                    <div class="form-item">
+                        <label>Title</label>
+                        <input type="text" name="title" class="w50">
+                    </div>
+
+                    <div class="form-item">
+                        <label>Author</label>
+                        <input type="text" name="author" class="w50">
+                    </div>
+
+                    <div class="form-item">
+                        <label>Content</label>
+                        <textarea rows="6" name="content"></textarea>
+                    </div>
+
+                    <div class="form-item">
+                        <label>Post image</label>
+                        <input type="file" name="image">
+                    </div>
+
+                    <div class="form-item">
+                        <button>Submit</button>
+                        <button class="button secondary outline">Cancel</button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+    </section>
+</main>
