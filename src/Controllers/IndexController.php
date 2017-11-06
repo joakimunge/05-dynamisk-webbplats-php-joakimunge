@@ -13,7 +13,7 @@ class IndexController extends AbstractController {
         $entries = $db->query('SELECT * FROM entries');
         $posts = [];
         foreach($entries as $entry) {
-            $modal = new Blogpost($entry['title'], $entry['content'], $entry['author'], $entry['date']);
+            $modal = new Blogpost($entry['title'], $entry['content'], $entry['author'], $entry['date'], $entry['image']);
             $posts[] = $modal;
         }
 

@@ -5,17 +5,17 @@
                 <form method="POST" action="/submit" class="form" enctype="multipart/form-data">
 
                     <div class="form-item">
-                        <label>Title</label>
+                        <label>Title <span class="req">*</span></label>
                         <input type="text" name="title" class="w50">
                     </div>
 
                     <div class="form-item">
-                        <label>Author</label>
+                        <label>Author <span class="req">*</span></label>
                         <input type="text" name="author" class="w50">
                     </div>
 
                     <div class="form-item">
-                        <label>Content</label>
+                        <label>Content <span class="req">*</span></label>
                         <textarea rows="6" name="content"></textarea>
                     </div>
 

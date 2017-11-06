@@ -8,12 +8,14 @@ class Blogpost {
     private $content;
     private $author;
     private $date;
+    private $image;
 
-    public function __construct(string $title, string $content, string $author, string $date) {
+    public function __construct(string $title, string $content, string $author, string $date, string $image) {
         $this->title = $title;
         $this->content = $content;
         $this->author = $author;
-        $this->date = $date;      
+        $this->date = $date;     
+        $this->image = $image; 
     }
 
     public function getTitle() {
@@ -32,6 +34,9 @@ class Blogpost {
         return $this->date;
     }
     
+    public function getImagePath() {
+        return $this->image;
+    }
 
 }
 

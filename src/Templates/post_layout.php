@@ -1,6 +1,6 @@
 <article class="col col-4 blog__post">
     <div class="blog__post-image">
-        <a href="/"><img src="./assets/img/blog-test.jpg" alt="" width=100%></a>
+        <a href="/"><img src="<?php echo $post->getImagePath(); ?>" alt="" width=100%></a>
     </div>
     <div class="blog__post-content">
         <h4 class="blog__post-title"><?php echo $post->getTitle(); ?></h4>
