@@ -11,7 +11,6 @@ class SubmitController extends AbstractController {
     {
         
         $target = '/vagrant/src/images/';
-        // $target = $target.basename($_FILES['image']['name']);
         $suffix = explode('.', $_FILES['image']['name']);
         $filename = uniqid('image');
         $target = $target.basename($filename . '.' . $suffix[1]);

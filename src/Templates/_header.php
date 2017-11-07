@@ -14,7 +14,7 @@
 
 <header id="top" data-component="sticky">
     <div id="top-logo">
-        <a href="#">__header</a>
+        <a href="/">Blog</a>
     </div>
     <nav id="top-navigation">
         <!-- <ul>
@@ -23,7 +23,7 @@
         </ul> -->
         <nav id="top-login">
                 <a href="/add" class="button primary">Submit new post!</a>
-                <a href="#" class="button outline inverted">Login</a>
+                <a href="#" class="button outline">Login</a>
                 <a href="#" class="button">Sign up!</a>
         </nav>
     </nav>
