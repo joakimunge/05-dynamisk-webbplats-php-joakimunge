@@ -40,7 +40,7 @@ class Request {
         return $this->postValues[$key];
     }
 
-    public function getQueryStrings(string $key) {
+    public function getQueryString(string $key) {
         return $this->queryStrings[$key];
     }
 
