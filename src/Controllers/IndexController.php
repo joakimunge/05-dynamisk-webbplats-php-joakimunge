@@ -3,7 +3,7 @@
 namespace Blog\Controllers;
 use Blog\Controllers\AbstractController;
 use Blog\Core\Database;
-use Blog\Views\Blogpost;
+use Blog\Models\Blogpost;
 
 class IndexController extends AbstractController {
 

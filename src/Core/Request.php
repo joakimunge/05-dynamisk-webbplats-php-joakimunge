@@ -48,10 +48,6 @@ class Request {
         return $this->filesValues[$key][$value];
     }
 
-/*     public function getFilesValues()
-    {
-        return $this->filesValues;
-    } */
 }
 
 ?>

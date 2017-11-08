@@ -16,6 +16,12 @@ class Database {
         return $sth->fetchAll();
     }
 
+    public function getAll(string $sql, array $params = []) {
+        $sqlq = 'SELECT * FROM entries LIMIT ?';
+        $this->query($sqlq, $params);
+    }
+
+    
 }
 
 ?>

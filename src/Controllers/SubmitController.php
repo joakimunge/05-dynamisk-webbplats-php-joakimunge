@@ -3,14 +3,12 @@ namespace Blog\Controllers;
 use Blog\Controllers\AbstractController;
 use Blog\Core\Database;
 
-
-
 class SubmitController extends AbstractController {
 
     public function submit()
     {
 
-        $targetSubstr = '/assets/img/default_thumb.jpg';
+        $imagePath = '/assets/img/default_thumb.jpg';
 
         if ($_FILES['image']['name'] != '') {
 
@@ -18,7 +16,7 @@ class SubmitController extends AbstractController {
             $suffix = explode('.', $_FILES['image']['name']);
             $filename = uniqid('image');
             $target = $target.basename($filename . '.' . $suffix[1]);
-            $targetSubstr = strstr($target, '/src');
+            $imagePath = strstr($target, '/src');
 
             if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
                 echo "The file " . basename($_FILES['image']['name']) . " has been uploaded, and your information has been added to the directory";
@@ -32,14 +30,9 @@ class SubmitController extends AbstractController {
             $this->request->getPostValue('title'),
             $this->request->getPostValue('author'),
             $this->request->getPostValue('content'),
-            $targetSubstr
+            $imagePath
         ]);;
-
-        var_dump($post);
-
-        
               
-        // header("Location: /post?id=" . $db->lastInsertId());
         header("Location: /");        
         die();
     }
