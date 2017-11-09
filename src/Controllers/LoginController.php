@@ -10,6 +10,12 @@ class LoginController extends AbstractController {
         $this->render('login');
     }
 
+    public function logout() {
+        session_unset();
+        session_destroy();
+        $this->redirect('/');
+    }
+
     public function submitLogin() {
         $db = new Database();
         $email = $_POST['email'];
@@ -34,11 +40,9 @@ class LoginController extends AbstractController {
             else {
                 $_SESSION['message'] = 'Wrong password!';
                 var_dump($_SESSION);
-
             }
 
         }
-
 
     }
 

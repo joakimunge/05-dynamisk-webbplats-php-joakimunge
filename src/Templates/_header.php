@@ -15,15 +15,18 @@
     <div id="top-logo">
         <a href="/">Blog</a>
     </div>
-    <nav id="top-navigation">
-        <!-- <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Blog</a></li>       
-        </ul> -->
+        <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
+        
         <nav id="top-login">
-                <a href="/add" class="button primary">Submit new post!</a>
+            <h4>Welcome back, <?php echo $_SESSION['first_name'] ?></h4>
+            <a href="/add" class="button primary">Submit new post!</a>
+            <a href="/logout" class="button">Log out</a>
+        </nav>
+        <?php else: ?>
+        <nav id="top-login">
                 <a href="/login" class="button outline">Login</a>
                 <a href="/signup" class="button">Sign up!</a>
         </nav>
+        <?php endif; ?>
     </nav>
 </header>
