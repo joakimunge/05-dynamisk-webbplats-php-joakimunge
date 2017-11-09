@@ -33,6 +33,8 @@ $router->get('/admin', 'AdminController', 'admin');
 $router->get('/add', 'AddnewController', 'add');
 $router->get('/post', 'PostViewController', 'postView');
 $router->post('/submit', 'SubmitController', 'submit');
+$router->get('/signup', 'SignupController', 'signup');
+$router->post('/register', 'SignupController', 'register');
 $router->dispatch();
 
 

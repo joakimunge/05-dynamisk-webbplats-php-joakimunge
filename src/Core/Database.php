@@ -16,6 +16,11 @@ class Database {
         return $sth->fetchAll();
     }
 
+    public function escape(string $string) {
+        $escapedString = $this->dbconnection->quote($string);
+        return $escapedString;
+    }
+
     // public function readOne(string $sql, array $params = []) {
     //     $sth = $this->dbconnection->prepare($sql);
     //     $sth->execute($params);

@@ -23,7 +23,7 @@
         <nav id="top-login">
                 <a href="/add" class="button primary">Submit new post!</a>
                 <a href="#" class="button outline">Login</a>
-                <a href="#" class="button">Sign up!</a>
+                <a href="/signup" class="button">Sign up!</a>
         </nav>
     </nav>
 </header>
