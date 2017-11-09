@@ -26,6 +26,13 @@ class Database {
         }
     }
 
+    public function readOne(string $sql, array $params = []) {
+        $sth = $this->dbconnection->prepare($sql);
+        $sth->execute($params);
+        return $sth->fetch(\PDO::FETCH_ASSOC);
+
+    }
+
     public function escape(string $string) {
         $escapedString = $this->dbconnection->quote($string);
         return $escapedString;

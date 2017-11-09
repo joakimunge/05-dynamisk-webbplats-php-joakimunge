@@ -29,6 +29,7 @@ $router = new Router($request);
 //Routes
 $router->get('/', 'IndexController', 'index');
 $router->get('/login', 'LoginController', 'login');
+$router->post('/submitlogin', 'LoginController', 'submitLogin');
 $router->get('/admin', 'AdminController', 'admin');
 $router->get('/add', 'AddnewController', 'add');
 $router->get('/post', 'PostViewController', 'postView');
