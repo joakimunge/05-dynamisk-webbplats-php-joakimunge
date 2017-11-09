@@ -41,6 +41,10 @@ a {
     text-decoration: none;
 }
 
+.pink-text {
+    color:$pink;
+}
+
 header#top {
     width: 100%;
     display:flex;
@@ -200,6 +204,24 @@ a.tags__btn:hover {
 
 .blog__post-content {
     padding:1.5em;
+}
+
+.post__hero {
+    overflow:hidden;
+    height: 400px;
+    background-size:cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.post__hero::after {
+    content: "";
+    position:relative;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,0.35);
 }
 
 footer#bottom {

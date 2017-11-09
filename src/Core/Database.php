@@ -16,10 +16,11 @@ class Database {
         return $sth->fetchAll();
     }
 
-    public function getAll(string $sql, array $params = []) {
-        $sqlq = 'SELECT * FROM entries LIMIT ?';
-        $this->query($sqlq, $params);
-    }
+    // public function readOne(string $sql, array $params = []) {
+    //     $sth = $this->dbconnection->prepare($sql);
+    //     $sth->execute($params);
+    //     return $sth->fetch(\PDO::FETCH_ASSOC);
+    // }
 
     
 }

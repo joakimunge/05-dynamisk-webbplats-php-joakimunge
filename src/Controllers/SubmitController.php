@@ -26,6 +26,13 @@ class SubmitController extends AbstractController {
 
         }
         $db = new Database();
+
+        if (strlen($this->request->getPostValue('title')) <= 0) {
+            echo 'You must set a title';
+            die();
+        }
+
+
         $post = $db->query('INSERT INTO `entries` SET title=?, author=?, content=?, image=?, date=NOW()', [
             $this->request->getPostValue('title'),
             $this->request->getPostValue('author'),
@@ -33,8 +40,7 @@ class SubmitController extends AbstractController {
             $imagePath
         ]);;
               
-        header("Location: /");        
-        die();
+        $this->redirect('/');        
     }
 
 }

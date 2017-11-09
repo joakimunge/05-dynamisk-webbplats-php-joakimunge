@@ -24,6 +24,11 @@ abstract class AbstractController {
 
         echo $renderedView;
     }
+
+    protected function redirect(string $url) {
+        header('Location: ' . $url);
+        die();
+    }
 }
 
 ?>
