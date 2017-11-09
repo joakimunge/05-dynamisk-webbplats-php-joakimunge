@@ -27,10 +27,13 @@ class SubmitController extends AbstractController {
         }
         $db = new Database();
 
-        if (strlen($this->request->getPostValue('title')) <= 0) {
-            echo 'You must set a title';
-            die();
-        }
+        // Temporary form validation
+        if (strlen($this->request->getPostValue('title')) <= 0
+        || strlen($this->request->getPostValue('author')) <= 0
+        || strlen($this->request->getPostValue('content')) <= 0) {
+            echo 'Error';
+            $this->redirect('/add');
+        } 
 
 
         $post = $db->query('INSERT INTO `entries` SET title=?, author=?, content=?, image=?, date=NOW()', [

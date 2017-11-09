@@ -119,6 +119,7 @@ a.tags__btn:hover {
   overflow: hidden;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  max-height: 312px;
   /*     img {
       height:256px;
       object-fit:cover;
