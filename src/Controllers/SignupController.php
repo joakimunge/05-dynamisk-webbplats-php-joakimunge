@@ -22,21 +22,23 @@ class SignupController extends AbstractController {
         $hash = md5(rand(0,1000));
 
         // Check if users exists in db with corresp. email
-        $userExists = $db->query('SELECT * FROM users WHERE email = ?', [$email]);
+        
 
-        if (count($userExists) > 0) {
+        if (count($db->query('SELECT * FROM users WHERE email = ?', [$email])) > 0) {
             echo 'A user with that email already exists';
         } 
-        
+
         else { //Email doesnt exist. Proceeed.
 
             $sql = 'INSERT INTO users (first_name, last_name, email, password, hash) VALUES (?, ?, ?, ?, ?)';
-
-            if ( $db->query($sql, [$first_name, $last_name, $email, $password, $hash]) ) {
-                echo 'Success!';
+            if ($db->createOne($sql, [$first_name, $last_name, $email, $password, $hash])) {
+                $_SESSION['loggedin'] = true;
+                $_SESSION['message'] = 'Success! Welcome!';
+                $this->redirect('/');
             }
             else {
-                echo 'Didnt work!';
+                $_SESSION['message'] = 'Registration failed. Something went wrong.';
+                $this->redirect('/');
             }
             
         }

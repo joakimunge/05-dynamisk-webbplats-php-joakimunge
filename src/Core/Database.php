@@ -12,8 +12,18 @@ class Database {
 
     public function query(string $sql, array $params = []) {
         $sth = $this->dbconnection->prepare($sql);
-        $sth->execute($params);
+        $result = $sth->execute($params);
         return $sth->fetchAll();
+    }
+
+    public function createOne(string $sql, array $params = []) {
+        $sth = $this->dbconnection->prepare($sql);
+        $result = $sth->execute($params);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function escape(string $string) {
