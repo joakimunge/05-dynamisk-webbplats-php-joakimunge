@@ -24,6 +24,8 @@ class IndexController extends AbstractController {
         ];
 
         $this->render('frontpage', $data);
+
+        var_dump($this->request);
     }
 
     public function tags() {

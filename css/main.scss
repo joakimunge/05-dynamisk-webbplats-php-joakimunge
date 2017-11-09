@@ -131,6 +131,7 @@ a.tags__btn {
     color: $blue;
     font-size: 12px;
     transition: all 0.5s ease;
+    min-width: 100px !important;
 }
 
 a.tags__btn:hover, a.tags__btn--active {

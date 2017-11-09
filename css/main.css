@@ -79,7 +79,8 @@ a.tags__btn {
   border: 2px solid #7359e5;
   color: #7359e5;
   font-size: 12px;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+  min-width: 100px !important; }
 
 a.tags__btn:hover, a.tags__btn--active {
   background-color: #7359e5;
