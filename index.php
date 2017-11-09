@@ -31,8 +31,9 @@ $router->get('/', 'IndexController', 'index');
 $router->get('/login', 'LoginController', 'login');
 $router->get('/admin', 'AdminController', 'admin');
 $router->get('/add', 'AddnewController', 'add');
+$router->get('/post', 'PostViewController', 'postView');
 $router->post('/submit', 'SubmitController', 'submit');
-
 $router->dispatch();
+
 
 ?>

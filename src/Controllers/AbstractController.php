@@ -12,7 +12,7 @@ abstract class AbstractController {
         $this->request = $request;
     }
 
-    protected function render(string $template, array $params = []) 
+    protected function render(string $template, array $params = []) // $params = data from model. Data that we want to render
     {
         extract($params);
 
@@ -23,6 +23,11 @@ abstract class AbstractController {
         $renderedView = ob_get_clean();
 
         echo $renderedView;
+    }
+
+    protected function redirect(string $url) {
+        header('Location: ' . $url);
+        die();
     }
 }
 

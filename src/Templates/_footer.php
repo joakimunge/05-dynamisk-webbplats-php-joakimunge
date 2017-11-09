@@ -1,8 +1,15 @@
-<footer id="bottom">
-    <div id="bottom-signoff">
-        <h4>Joakim Unge</h4>
-    </div>
-</footer>
+        <footer id="bottom">
+            
+            <div id="bottom-signoff">
+                <span class="divider divider--thin grey"></span>
+                <h5 class="signoff">Joakim Unge</h5>
+                <ul class="social">
+                    <li><a href="http://www.github.com/joakimunge" class="social__item"><i class="fa fa-github fa-3" aria-hidden="true"></i></a></li>                       
+                </ul>
+            </div>
+        </footer>
 
-</body>
+
+        <script src="https://use.fontawesome.com/9ddb80cf53.js"></script>
+    </body>
 </html>

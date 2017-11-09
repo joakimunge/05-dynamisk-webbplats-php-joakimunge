@@ -18,7 +18,7 @@
             <?php
             
                 foreach($params as $post) {
-                    include('post_layout.php');
+                    include('post_card.php');
                 }
             
             ?>

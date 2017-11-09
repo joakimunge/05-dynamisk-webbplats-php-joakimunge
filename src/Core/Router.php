@@ -4,6 +4,7 @@ namespace Blog\Core;
 use Blog\Controllers\AbstractController;
 use Blog\Controllers\IndexController;
 use Blog\Controllers\SubmitController;
+use Blog\Controllers\PostViewController;
 
 
 class Router {

@@ -40,7 +40,7 @@ class Request {
         return $this->postValues[$key];
     }
 
-    public function getQueryStrings(string $key) {
+    public function getQueryString(string $key) {
         return $this->queryStrings[$key];
     }
 
@@ -48,10 +48,6 @@ class Request {
         return $this->filesValues[$key][$value];
     }
 
-/*     public function getFilesValues()
-    {
-        return $this->filesValues;
-    } */
 }
 
 ?>

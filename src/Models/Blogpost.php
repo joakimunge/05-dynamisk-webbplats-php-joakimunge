@@ -1,6 +1,6 @@
 <?php 
 
-namespace Blog\Views;
+namespace Blog\Models;
 
 class Blogpost {
 
@@ -9,13 +9,15 @@ class Blogpost {
     private $author;
     private $date;
     private $image;
+    private $id;
 
-    public function __construct(string $title, string $content, string $author, string $date, string $image) {
+    public function __construct(string $title, string $content, string $author, string $date, string $image, int $id) {
         $this->title = $title;
         $this->content = $content;
         $this->author = $author;
         $this->date = $date;     
         $this->image = $image; 
+        $this->id = $id;
     }
 
     public function getTitle() {
@@ -36,6 +38,14 @@ class Blogpost {
     
     public function getImagePath() {
         return $this->image;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function getURL() {
+        return '/post?id=' . $this->getId();
     }
 
 }
