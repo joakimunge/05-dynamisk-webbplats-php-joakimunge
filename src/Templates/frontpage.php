@@ -2,15 +2,15 @@
     <section class="content">
         <section class="row">
             <div class="col col-12 tags">
-                <ul class="tags__list">
-                    <li><a href="#" class="tags__btn">Web Development</a></li>
-                    <li><a href="#" class="tags__btn">CSS</a></li>
-                    <li><a href="#" class="tags__btn">PHP</a></li>
-                    <li><a href="#" class="tags__btn">Javascript</a></li>
-                    <li><a href="#" class="tags__btn">React</a></li>
-                    <li><a href="#" class="tags__btn">Angular</a></li>
-                    <li><a href="#" class="tags__btn">Frameworks</a></li>
-                    <li><a href="#" class="tags__btn">HTML</a></li>
+                <ul id="tags" class="tags__list">
+                    <li><a href="#" class="tags__btn" data-value="webdev">Web Development</a></li>
+                    <li><a href="#" class="tags__btn" data-value="css">CSS</a></li>
+                    <li><a href="#" class="tags__btn" data-value="php">PHP</a></li>
+                    <li><a href="#" class="tags__btn" data-value="javascript">Javascript</a></li>
+                    <li><a href="#" class="tags__btn" data-value="react">React</a></li>
+                    <li><a href="#" class="tags__btn" data-value="angular">Angular</a></li>
+                    <li><a href="#" class="tags__btn" data-value="frameworks">Frameworks</a></li>
+                    <li><a href="#" class="tags__btn" data-value="html">HTML</a></li>
                 </ul>
             </div>
         </section>

@@ -81,7 +81,7 @@ a.tags__btn {
   font-size: 12px;
   transition: all 0.5s ease; }
 
-a.tags__btn:hover {
+a.tags__btn:hover, a.tags__btn--active {
   background-color: #7359e5;
   color: #FFF; }
 

@@ -133,7 +133,7 @@ a.tags__btn {
     transition: all 0.5s ease;
 }
 
-a.tags__btn:hover {
+a.tags__btn:hover, a.tags__btn--active {
     background-color: $blue;
     color:#FFF;
 }
