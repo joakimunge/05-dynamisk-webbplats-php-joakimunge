@@ -25,13 +25,17 @@ class IndexController extends AbstractController {
 
         $this->render('frontpage', $data);
 
-        var_dump($this->request);
     }
 
     public function tags() {
         $tagModel = new Tag();
         $tags = $tagModel->getTags();
-        return $tags;
+
+        foreach($tags as $tag) {
+            $instance = new Tag($tag['Tag_ID'], $tag['Tag_Title']);
+            $tagObjs[] = $instance;
+        }
+        return $tagObjs;
     }
 
 }

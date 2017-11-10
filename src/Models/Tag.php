@@ -7,18 +7,17 @@ class Tag {
 
     private $id;
     private $title;
+    private $connection;
 
-    // public function __construct(int $id, string $title) {
-    //     $this->id = $id;
-    //     $this->title = $title;
-    // }
+    public function __construct(int $id = null, string $title = null) {
+        $this->id = $id;
+        $this->title = $title;
+        $this->connection = new Database();
+    }
 
     public function getTags() {
-        $db = new Database;
-
         $sql = 'SELECT * FROM tags';
-        return $db->query($sql);
-        
+        return $this->connection->query($sql);
     }
 
     public function getTitle() {
@@ -27,6 +26,16 @@ class Tag {
 
     public function getId() {
         return $this->id;
+    }
+
+    public function getPostByTag(array $data) {       
+        $sql = 'SELECT * FROM posts WHERE tag_id = ?';
+        return $this->connection->query($sql, $data);        
+
+    }
+
+    public function getURL() {
+        return '?tag_id=' . $this->getId();
     }
 
 }

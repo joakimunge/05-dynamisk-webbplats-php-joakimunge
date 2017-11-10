@@ -4,7 +4,7 @@
             <div class="col col-12 tags">
                 <ul id="tags" class="tags__list">
                     <?php foreach($tags as $tag): ?>
-                        <li><a href="<?php echo '?tag_id=' . $tag['Tag_ID'];?>" class="tags__btn"><?php echo $tag['Tag_Title']; ?></a></li>  
+                        <li><a href="<?php echo $tag->getURL();?>" class="tags__btn"><?php echo $tag->getTitle(); ?></a></li>  
                     <?php endforeach; ?>                                  
                 </ul>
             </div>
