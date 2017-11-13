@@ -42,4 +42,6 @@ $router->get('/logout', 'LoginController', 'logout');
 //Populate routes
 $router->dispatch();
 
+var_dump($_SESSION);
+
 ?>

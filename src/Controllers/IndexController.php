@@ -11,6 +11,7 @@ class IndexController extends AbstractController {
     public function index() {
         $db = new Database();
         $data = [];
+        var_dump($this->request);
 
         $entries = $db->query('SELECT * FROM entries');
         foreach($entries as $entry) {

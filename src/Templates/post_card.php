@@ -4,7 +4,7 @@
     </div>
     <div class="blog__post-content">
         <h4 class="blog__post-title"><?php echo $post->getTitle(); ?></h4>
-        <h5 class="blog__post-author"><?php echo $post->getAuthor(); ?></h5>
+        <h5 class="blog__post-author">by <?php echo $post->getAuthor(); ?></h5>
         <p class="blog__post-timestamp"><?php echo $post->getDate(); ?></p>
         <p><?php echo $post->getContent(); ?></p>
     </div>

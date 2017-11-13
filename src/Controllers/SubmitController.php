@@ -29,16 +29,16 @@ class SubmitController extends AbstractController {
 
         // Temporary form validation
         if (strlen($this->request->getPostValue('title')) <= 0
-        || strlen($this->request->getPostValue('author')) <= 0
         || strlen($this->request->getPostValue('content')) <= 0) {
             echo 'Error';
             $this->redirect('/add');
         } 
 
 
-        $post = $db->query('INSERT INTO `entries` SET title=?, author=?, content=?, image=?, date=NOW()', [
+        $post = $db->query('INSERT INTO `entries` SET title=?, author=?, author_id=?, content=?, image=?, date=NOW()', [
             $this->request->getPostValue('title'),
-            $this->request->getPostValue('author'),
+            $_SESSION['first_name'],
+            $_SESSION['id'],
             $this->request->getPostValue('content'),
             $imagePath
         ]);;
