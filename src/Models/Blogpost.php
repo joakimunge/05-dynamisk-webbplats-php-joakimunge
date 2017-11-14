@@ -10,6 +10,7 @@ class Blogpost {
     private $date;
     private $image;
     private $id;
+    private $tags;
 
     public function __construct(string $title, string $content, string $author, string $date, string $image, int $id) {
         $this->title = $title;
@@ -42,6 +43,12 @@ class Blogpost {
 
     public function getId() {
         return $this->id;
+    }
+
+    public function getTags() {
+        foreach($this->tags as $tag) {
+            return $tag;
+        }
     }
 
     public function getURL() {

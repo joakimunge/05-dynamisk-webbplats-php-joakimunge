@@ -25,25 +25,42 @@ class SubmitController extends AbstractController {
             } 
 
         }
-        $db = new Database();
 
+        
         // Temporary form validation
         if (strlen($this->request->getPostValue('title')) <= 0
         || strlen($this->request->getPostValue('content')) <= 0) {
             echo 'Error';
             $this->redirect('/add');
         } 
+        
 
+        // Join?  LEFT JOIN entry_tag_bridge ON entries.id = entry_tag_bridge.Item_ID
+        try {
 
-        $post = $db->query('INSERT INTO `entries` SET title=?, author=?, author_id=?, content=?, image=?, date=NOW()', [
-            $this->request->getPostValue('title'),
-            $_SESSION['first_name'],
-            $_SESSION['id'],
-            $this->request->getPostValue('content'),
-            $imagePath
-        ]);;
-              
-        $this->redirect('/');        
+            $db = new Database();
+
+            $db->dbconnection->beginTransaction();
+            
+            $post = $db->query('INSERT INTO entries SET title=?, author=?, author_id=?, content=?, image=?, date=NOW();', [
+                $this->request->getPostValue('title'),
+                $_SESSION['first_name'],
+                $_SESSION['id'],
+                $this->request->getPostValue('content'),
+                $imagePath
+            ]);
+
+            $bridge = $db->query('INSERT INTO entry_tag SET entry_id = LAST_INSERT_ID(), tag_id = ?', [
+                $this->request->getPostValue('tag')
+            ]);
+
+            $db->dbconnection->commit();
+
+        } catch(Exception $e) {
+            echo 'meep';
+        }
+
+        $this->redirect('/post?id=' . $db->getLastInserted('id'));        
     }
 
 }

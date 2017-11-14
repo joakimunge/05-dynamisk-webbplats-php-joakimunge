@@ -7,6 +7,8 @@ error_reporting(E_ALL);
 
 session_start();
 
+// var_dump($_SERVER['HTTP_X_REQUESTED_WITH']);
+
 use Blog\Core\Router;
 use Blog\Core\Request;
 
@@ -41,7 +43,5 @@ $router->get('/logout', 'LoginController', 'logout');
 
 //Populate routes
 $router->dispatch();
-
-var_dump($_SESSION);
 
 ?>
