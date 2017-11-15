@@ -4,12 +4,16 @@
             <div class="col col-12 tags">
                 <ul id="tags" class="tags__list">
                     <?php foreach($tags as $tag): ?>
-                        <li><a href="<?php echo $tag->getURL();?>" class="tags__btn" data-id="<?php echo $tag->getId(); ?>"><?php echo $tag->getTitle(); ?></a></li>  
+                        <li><button type="submit" 
+                                class="tags__btn" 
+                                data-id="<?php echo $tag->getId(); ?>"><?php echo $tag->getTitle(); ?>
+                            </button>
+                        </li>  
                     <?php endforeach; ?>                                  
                 </ul>
             </div>
         </section>
-        <section class="row gutters blog">
+        <section id="entries" class="row gutters blog">
             <?php
                 foreach($posts as $post) {
                     include('post_card.php');
