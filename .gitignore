@@ -3,3 +3,5 @@ provisioner.sh
 .vagrant/
 css/.sass-cache/
 src/images/
+
+*.scssc
