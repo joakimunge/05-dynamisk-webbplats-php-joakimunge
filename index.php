@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 
 session_start();
 
+
 use Blog\Core\Router;
 use Blog\Core\Request;
 use Blog\Core\Database;
@@ -34,37 +35,14 @@ $router->get('/admin', 'AdminController', 'admin');
 $router->get('/add', 'AddnewController', 'add');
 $router->get('/post', 'PostViewController', 'postView');
 $router->get('/signup', 'SignupController', 'signup');
+$router->get('/logout', 'LoginController', 'logout');
 
 //Routes - Post
 $router->post('/submitlogin', 'LoginController', 'submitLogin');
 $router->post('/submit', 'SubmitController', 'submit');
 $router->post('/register', 'SignupController', 'register');
-$router->get('/logout', 'LoginController', 'logout');
-
+$router->post('/api', 'FilterController', 'filterByTag');
 //Populate routes
 $router->dispatch();
 
-//Ajax
-if (isset($_POST['json'])) {
-
-    $ajaxResponse = json_decode($_POST['json'], true);
-    $db = new Database();
-    
-    $tag = $ajaxResponse['tag_id'];
-    $entries = $db->query('SELECT * FROM entry_tag JOIN entries ON entry_tag.entry_id = entries.id WHERE tag_id = ?', [$tag]);
-    $posts = [];
-    foreach ($entries as $entry) {
-        $post = new Blogpost($entry['title'], $entry['content'], $entry['author'], $entry['date'], $entry['image'], $entry['id']);
-        $posts[] = $post;
-    }
-
-    foreach ($posts as $post) {
-        include ('./src/Templates/post_card.php');
-    }
-    
-    $data = [
-        'posts' => $posts
-    ];
-
-}
 ?>

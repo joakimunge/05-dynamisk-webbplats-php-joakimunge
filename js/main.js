@@ -1,14 +1,32 @@
 const tags = document.querySelectorAll('.tags__btn');
+let ajaxData = [];
 
 for(let i = 0; i < tags.length; i++) {
     tags[i].addEventListener('click', function(e) {
         e.preventDefault();
-        tags[i].classList.toggle('tags__btn--active');
-        dataId = tags[i].getAttribute('data-id');
-        ajaxData = 'json={"AJAX":true,"tag_id":' + dataId + '}';
-        console.log(ajaxData);
-        newXhr(ajaxData);
+        let data = toggleTag(tags[i]);
+        data = 'json={"tag_id":[' + data + ']}';
+        newXhr(data);
     });
+}
+
+function toggleTag(tag) {
+    tag.classList.toggle('tags__btn--active');
+    tagId = {
+        'id': tag.getAttribute('data-id')
+    }
+
+    const indexInAjaxData = ajaxData.findIndex(function(elem) {
+        return elem === tagId.id;
+    });
+    
+    if (indexInAjaxData !== -1) {
+        ajaxData.splice(indexInAjaxData, 1);
+        return ajaxData;
+    }
+
+    ajaxData.push(tagId.id);
+    return ajaxData;
 }
 
 function newXhr(elem) {
@@ -21,7 +39,7 @@ function newXhr(elem) {
     }
 
     let data = elem;
-    xhr.open("POST", "index.php", true);
+    xhr.open("POST", "/api", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send(data);
 
@@ -29,8 +47,6 @@ function newXhr(elem) {
     function display_data() {
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
-                //alert(xhr.responseText);	   
-                console.log(xhr.responseText);
                 document.querySelector('#entries').innerHTML = xhr.responseText;
             } else {
                 alert('There was a problem with the request.');

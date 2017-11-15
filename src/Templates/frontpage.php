@@ -4,10 +4,11 @@
             <div class="col col-12 tags">
                 <ul id="tags" class="tags__list">
                     <?php foreach($tags as $tag): ?>
-                        <li><button type="submit" 
+                        <li><a href="#"
                                 class="tags__btn" 
-                                data-id="<?php echo $tag->getId(); ?>"><?php echo $tag->getTitle(); ?>
-                            </button>
+                                data-id="<?php echo $tag->getId(); ?>"
+                                data-name"<?php echo $tag->getTitle(); ?>"><?php echo $tag->getTitle(); ?>
+                            </a>
                         </li>  
                     <?php endforeach; ?>                                  
                 </ul>
