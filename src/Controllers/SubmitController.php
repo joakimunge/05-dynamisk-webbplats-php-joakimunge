@@ -59,8 +59,8 @@ class SubmitController extends AbstractController {
         } catch(Exception $e) {
             echo 'meep';
         }
-
-        $this->redirect('/post?id=' . $db->getLastInserted('id'));        
+        $lastId = $db->getLastInserted('id', 'entries');
+        $this->redirect('/post?id=' . $lastId);        
     }
 
 }

@@ -34,8 +34,8 @@ class Database extends PDO {
 
     }
 
-    public function getLastInserted(string $key) {
-        $sth = $this->dbconnection->prepare('SELECT * FROM entries WHERE id = LAST_INSERT_ID()');
+    public function getLastInserted(string $key, string $table) {
+        $sth = $this->dbconnection->prepare('SELECT * FROM ' . $table . ' WHERE id = LAST_INSERT_ID()');
         $sth->execute();
         $result = $sth->fetch(PDO::FETCH_ASSOC);
         return $result[$key];

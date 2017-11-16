@@ -31,6 +31,7 @@ class SignupController extends AbstractController {
             $sql = 'INSERT INTO users (first_name, last_name, email, password, hash) VALUES (?, ?, ?, ?, ?)';
             if ($db->createOne($sql, [$first_name, $last_name, $email, $password, $hash])) {
                 $_SESSION['loggedin'] = true;
+                $_SESSION['id'] = $db->getLastInserted('id', 'users');
                 $_SESSION['message'] = 'Success! Welcome!';
                 $this->redirect('/');
             }
