@@ -1,4 +1,4 @@
-<article class="col col-4 blog__post">
+<article class="col col-4 blog__post animate__fadein">
     <div class="blog__post-image">
         <a href="<?php echo $post->getURL(); ?>"><img src="<?php echo $post->getImagePath(); ?>" alt="blog-post-image" width=100%></a>
     </div>

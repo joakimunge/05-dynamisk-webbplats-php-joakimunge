@@ -28,6 +28,11 @@ class FilterController extends AbstractController {
     
             $this->entries = $db->query('SELECT * FROM entry_tag JOIN entries ON entry_tag.entry_id = entries.id WHERE tag_id IN ' . $IN_STRING, $tag);
 
+            if (count($this->entries) === 0) {
+                $this->noPostsFound();
+                return;
+            }
+
             foreach ($this->entries as $entry) {
                 $post = new Blogpost($entry['title'], $entry['content'], $entry['author'], $entry['date'], $entry['image'], $entry['id']);
                 $this->posts[] = $post;
@@ -53,6 +58,10 @@ class FilterController extends AbstractController {
         foreach ($this->posts as $post) {
             include ('./src/Templates/post_card.php');
         }
+    }
+
+    public function noPostsFound() {
+        include './src/Templates/postsnotfound.php';
     }
 
 }
