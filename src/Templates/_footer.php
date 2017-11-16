@@ -10,7 +10,7 @@
         </footer>
 
 
-        <script src="https://use.fontawesome.com/9ddb80cf53.js"></script>
         <script src="../../js/main.js"></script>
+        <script src="https://use.fontawesome.com/9ddb80cf53.js"></script>
     </body>
 </html>

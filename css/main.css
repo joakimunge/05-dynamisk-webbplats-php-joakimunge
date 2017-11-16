@@ -203,4 +203,29 @@ footer#bottom {
 .grey {
   background-color: #CCC5B9; }
 
+.center {
+  margin: 0 auto;
+}
+
+#error__notfound {
+  text-align: center;
+  margin: 0 auto;
+  padding-top:3em;
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate__fadein {
+  animation: fadeIn 1s ease;
+}
+
 /*# sourceMappingURL=main.css.map */
