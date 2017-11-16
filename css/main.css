@@ -218,9 +218,11 @@ footer#bottom {
 @keyframes fadeIn {
   0% {
     opacity: 0;
+    margin-top:25px;
   }
   100% {
     opacity: 1;
+    margin-top:0px;
   }
 }
 
