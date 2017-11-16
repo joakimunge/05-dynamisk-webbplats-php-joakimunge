@@ -141,6 +141,22 @@ a.tags__btn:hover, a.tags__btn--active {
 .blog__post-content {
   padding: 1.5em; }
 
+.blog__icon {
+  margin-right:0.3em;
+}
+
+.blog__icon-edit i, .blog__icon-fav i {
+  color: #CCC;
+}
+
+.blog__icon-edit i:hover, .blog__icon-fav i:hover {
+  color:#e5446d;
+}
+
+.blog__icon-active {
+  color: #7359e5;
+}
+
 .post__hero {
   overflow: hidden;
   height: 400px;
