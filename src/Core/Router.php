@@ -5,6 +5,7 @@ use Blog\Controllers\AbstractController;
 use Blog\Controllers\IndexController;
 use Blog\Controllers\SubmitController;
 use Blog\Controllers\PostViewController;
+use Blog\Controllers\ApiController;
 
 
 class Router {
