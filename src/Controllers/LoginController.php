@@ -33,6 +33,7 @@ class LoginController extends AbstractController {
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['first_name'] = $user['first_name'];
                 $_SESSION['last_name'] = $user['last_name'];
+                $_SESSION['admin'] = $user['admin'];
                 $_SESSION['loggedin'] = true;
 
                 $this->redirect('/');

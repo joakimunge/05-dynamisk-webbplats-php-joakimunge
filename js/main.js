@@ -32,6 +32,7 @@ function toggleTag(tag) {
 function toggleFav(data) {
     const favBtn = document.querySelector(`[data-id='c${data}']`);
     favBtn.classList.toggle('blog__icon-fav--active');
+    favBtn.classList.toggle('animate__flare');    
     data = 'id=' + data + '"';
     newXhr(data, '/api/fav', false);
 }

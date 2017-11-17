@@ -33,6 +33,7 @@ class SignupController extends AbstractController {
                 $_SESSION['loggedin'] = true;
                 $_SESSION['id'] = $db->getLastInserted('id', 'users');
                 $_SESSION['message'] = 'Success! Welcome!';
+                $_SESSION['admin'] = false;
                 $this->redirect('/');
             }
             else { 

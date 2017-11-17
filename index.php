@@ -7,7 +7,6 @@ error_reporting(E_ALL);
 
 session_start();
 
-
 use Blog\Core\Router;
 use Blog\Core\Request;
 use Blog\Core\Database;
