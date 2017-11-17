@@ -162,6 +162,16 @@ a.tags__btn:hover, a.tags__btn--active {
   color:#ff9e21;
 }
 
+.favorites {
+  font-size:22px;
+  color: #ff9e21;
+  cursor: pointer; 
+}
+
+.favorites:hover {
+  color:#e5446d;
+}
+
 .post__hero {
   overflow: hidden;
   height: 400px;
@@ -247,6 +257,19 @@ footer#bottom {
     margin-top:0px;
     transform: scale(1.0)
   }
+}
+
+@keyframes flare {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate__flare {
+  animation: flare 0.5s ease;
 }
 
 .animate__fadein {
