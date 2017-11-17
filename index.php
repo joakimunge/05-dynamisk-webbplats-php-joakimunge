@@ -41,7 +41,8 @@ $router->get('/logout', 'LoginController', 'logout');
 $router->post('/submitlogin', 'LoginController', 'submitLogin');
 $router->post('/submit', 'SubmitController', 'submit');
 $router->post('/register', 'SignupController', 'register');
-$router->post('/api', 'FilterController', 'filterByTag');
+$router->post('/api', 'ApiController', 'filterByTag');
+$router->post('/api/fav', 'ApiController', 'markFavorite');
 //Populate routes
 $router->dispatch();
 
