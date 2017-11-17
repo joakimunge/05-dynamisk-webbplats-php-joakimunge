@@ -24,7 +24,7 @@
                     
                     <div class="form-item">
                         <label>Password<span class="req">*</span></label>
-                        <input type="text" name="password" class="w50">
+                        <input type="password" name="password" class="w50">
                     </div>
 
                     <div class="form-item">

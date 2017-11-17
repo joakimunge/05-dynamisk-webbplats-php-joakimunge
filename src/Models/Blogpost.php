@@ -1,6 +1,7 @@
 <?php 
 
 namespace Blog\Models;
+use Blog\Core\Database;
 
 class Blogpost {
 
@@ -53,6 +54,17 @@ class Blogpost {
 
     public function getURL() {
         return '/post?id=' . $this->getId();
+    }
+
+    public function getFavStatus() {
+        $db = new Database();
+        $row = $db->query('SELECT * FROM user_fav WHERE entry_id = ? AND user_id = ?', [$this->getId(), $_SESSION['id']]);
+
+        if (count($row) >= 1) {
+            return 'blog__icon-fav--active';
+        }
+
+        return;
     }
 
 }
