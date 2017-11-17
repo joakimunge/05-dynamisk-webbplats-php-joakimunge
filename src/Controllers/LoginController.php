@@ -40,7 +40,6 @@ class LoginController extends AbstractController {
             }
             else {
                 $_SESSION['message'] = 'Wrong password!';
-                var_dump($_SESSION);
             }
 
         }
