@@ -147,6 +147,7 @@ a.tags__btn:hover, a.tags__btn--active {
 
 .blog__icon-edit i, .blog__icon-fav i {
   color: #CCC;
+  cursor:pointer;
 }
 
 .blog__icon-edit i:hover, .blog__icon-fav i:hover {
@@ -155,6 +156,10 @@ a.tags__btn:hover, a.tags__btn--active {
 
 .blog__icon-active {
   color: #7359e5;
+}
+
+.blog__icon-fav--active i {
+  color:#ff9e21;
 }
 
 .post__hero {
@@ -235,10 +240,12 @@ footer#bottom {
   0% {
     opacity: 0;
     margin-top:25px;
+    transform: scale(0.95);
   }
   100% {
     opacity: 1;
     margin-top:0px;
+    transform: scale(1.0)
   }
 }
 
