@@ -20,7 +20,7 @@
 
         <?php if(isset($_SESSION['id']) && $_SESSION['admin'] === '1'): ?>
             <span class="blog__icon blog__icon-edit">
-                <a href="/edit?post_id=<?php echo $post->getId(); ?>">
+                <a href="/edit?id=<?php echo $post->getId(); ?>">
                     <i class="fa fa-pencil" aria-hidden="true"></i>
                 </a>
             </span>
