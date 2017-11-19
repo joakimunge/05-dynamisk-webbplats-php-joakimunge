@@ -26,16 +26,12 @@ class SubmitController extends AbstractController {
 
         }
 
-        
-        // Temporary form validation
         if (strlen($this->request->getPostValue('title')) <= 0
         || strlen($this->request->getPostValue('content')) <= 0) {
             echo 'Error';
             $this->redirect('/add');
         } 
         
-
-        // Join?  LEFT JOIN entry_tag_bridge ON entries.id = entry_tag_bridge.Item_ID
         try {
 
             $db = new Database();
