@@ -188,6 +188,12 @@ a.tags__btn:hover, a.tags__btn--active {
   left: 0;
   background-color: rgba(0, 0, 0, 0.35); }
 
+.thumbnail {
+  width:250px;
+  border-radius:5px;
+  margin-bottom: 1em;
+}
+
 footer#bottom {
   width: 100%;
   background-color: white;
