@@ -35,6 +35,7 @@ $router->get('/add', 'AddnewController', 'add');
 $router->get('/post', 'PostViewController', 'postView');
 $router->get('/signup', 'SignupController', 'signup');
 $router->get('/logout', 'LoginController', 'logout');
+$router->get('/edit', 'PostController', 'editPost');
 
 //Routes - Post
 $router->post('/submitlogin', 'LoginController', 'submitLogin');
@@ -42,6 +43,7 @@ $router->post('/submit', 'SubmitController', 'submit');
 $router->post('/register', 'SignupController', 'register');
 $router->post('/api', 'ApiController', 'filterByTag');
 $router->post('/api/fav', 'ApiController', 'markFavorite');
+$router->post('/submitedit', 'PostController', 'submitEdit');
 //Populate routes
 $router->dispatch();
 
