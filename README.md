@@ -2,4 +2,4 @@
 
 Hosted here:
 
-http://joakimunge.chas.academy
+http://blog.joakimunge.chas.academy
