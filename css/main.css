@@ -158,6 +158,13 @@ a.fav__btn:hover, a.fav__btn--active {
 .blog__post-content {
   padding: 1.5em; }
 
+.blog__post-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
 .blog__icon {
   margin-right:0.3em;
 }

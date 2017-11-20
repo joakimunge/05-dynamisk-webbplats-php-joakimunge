@@ -17,7 +17,7 @@
         <p class="blog__post-timestamp">
             <?php echo $post->getDate(); ?>
         </p>
-        <p>
+        <p class="blog__post-text">
             <?php echo $post->getContent(); ?>
         </p>
 
