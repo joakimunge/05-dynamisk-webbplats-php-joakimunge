@@ -22,9 +22,19 @@ class PostController extends AbstractController
     }
 
     public function editPost() {
+        if (!$this->isAuthed()) {
+            $this->redirect('/login');
+        }
+
         $db = new Database();
         $id = $this->request->getQueryString('id');
         $post = $db->query('SELECT * FROM entries WHERE id = ?', [$id]);
+
+        var_dump($post[0]['author_id']);
+
+        if (!$this->isOwner($post[0]['author_id'])) {
+            $this->redirect('/post?id=' . $id);
+        }
 
         $data = ['post' => $post];
 

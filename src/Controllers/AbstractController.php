@@ -29,6 +29,26 @@ abstract class AbstractController {
         header('Location: ' . $url);
         die();
     }
+
+    protected function isAuthed() {
+        if (isset($_SESSION['loggedin'])) {
+            return true;
+        }
+
+        return false;
+    }
+
+    protected function isOwner(string $authorId) {
+        if ($_SESSION['admin'] === '1') {
+            return true;
+        }
+
+        if ($authorId === $_SESSION['id']) {
+            return true;
+        }
+
+        return false;
+    }
 }
 
 ?>
