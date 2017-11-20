@@ -5,7 +5,7 @@
                 <ul id="tags" class="tags__list">
                     <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
                     <li>
-                        <a href="#" class="fav__btn"><i class="fa fa-star" aria-hidden="true"></i> Favorites</a>
+                        <a href="#" class="fav__btn" onclick="getFavs()"><i class="fa fa-star" aria-hidden="true"></i> Favorites</a>
                     </li>
                     <?php endif; ?>
                     <?php foreach($tags as $tag): ?>

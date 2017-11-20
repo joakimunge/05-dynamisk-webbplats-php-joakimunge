@@ -1,7 +1,6 @@
 const tags = document.querySelectorAll('.tags__btn');
 const favBtn = document.querySelector('.fav__btn');
 
-favBtn.addEventListener('click', getFavs);
 let ajaxData = [];
 
 for(let i = 0; i < tags.length; i++) {
