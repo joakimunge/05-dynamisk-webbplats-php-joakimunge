@@ -41,6 +41,14 @@ class PostController extends AbstractController
         $this->redirect('/');
     }
 
+    public function deletePost() {
+        $db = new Database();
+        $id = $this->request->getQueryString('id');
+        $db->query('DELETE FROM entries WHERE id=?', [$id]);
+        $this->redirect('/');
+
+    }
+
 }
 
 ?>

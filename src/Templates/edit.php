@@ -44,7 +44,7 @@
 
                     <div class="form-item">
                         <button>Update</button>
-                        <button class="button secondary outline">Delete post</button>
+                        <button formaction="/deletepost?id=<?php echo $post[0]['id'] ?>" class="button secondary outline">Delete post</button>
                     </div>
 
                 </form>

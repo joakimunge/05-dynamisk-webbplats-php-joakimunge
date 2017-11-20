@@ -44,6 +44,7 @@ $router->post('/register', 'SignupController', 'register');
 $router->post('/api', 'ApiController', 'filterByTag');
 $router->post('/api/fav', 'ApiController', 'markFavorite');
 $router->post('/submitedit', 'PostController', 'submitEdit');
+$router->post('/deletepost', 'PostController', 'deletePost');
 //Populate routes
 $router->dispatch();
 
