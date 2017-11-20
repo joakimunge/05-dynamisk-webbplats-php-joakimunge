@@ -18,7 +18,7 @@
             <?php echo $post->getContent(); ?>
         </p>
 
-        <?php if(isset($_SESSION['id']) && $_SESSION['admin'] === '1'): ?>
+        <?php if($post->userCanEdit()): ?>
             <span class="blog__icon blog__icon-edit">
                 <a href="/edit?id=<?php echo $post->getId(); ?>">
                     <i class="fa fa-pencil" aria-hidden="true"></i>

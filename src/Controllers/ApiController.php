@@ -34,7 +34,7 @@ class ApiController extends AbstractController {
             }
 
             foreach ($this->entries as $entry) {
-                $post = new Blogpost($entry['title'], $entry['content'], $entry['author'], $entry['date'], $entry['image'], $entry['id']);
+                $post = new Blogpost($entry['title'], $entry['content'], $entry['author'], $entry['date'], $entry['image'], $entry['id'], $entry['author_id']);
                 $this->posts[] = $post;
             }
         
@@ -51,7 +51,7 @@ class ApiController extends AbstractController {
 
     public function renderBlogposts() {
         foreach ($this->entries as $entry) {
-            $post = new Blogpost($entry['title'], $entry['content'], $entry['author'], $entry['date'], $entry['image'], $entry['id']);
+            $post = new Blogpost($entry['title'], $entry['content'], $entry['author'], $entry['date'], $entry['image'], $entry['id'], $entry['author_id']);
             $this->posts[] = $post;
         }
     

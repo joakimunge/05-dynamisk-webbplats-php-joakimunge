@@ -12,14 +12,16 @@ class Blogpost {
     private $image;
     private $id;
     private $tags;
+    private $authorId;
 
-    public function __construct(string $title, string $content, string $author, string $date, string $image, int $id) {
+    public function __construct(string $title, string $content, string $author, string $date, string $image, int $id, int $authorId) {
         $this->title = $title;
         $this->content = $content;
         $this->author = $author;
         $this->date = $date;     
         $this->image = $image; 
         $this->id = $id;
+        $this->authorId = $authorId;        
     }
 
     public function getTitle() {
@@ -32,6 +34,10 @@ class Blogpost {
 
     public function getAuthor() {
         return $this->author;
+    }
+
+    public function getAuthorId() {
+        return $this->authorId;
     }
 
     public function getDate() {
@@ -66,6 +72,18 @@ class Blogpost {
         }
 
         return;
+    }
+
+    public function userCanEdit() {
+        if (isset($_SESSION['loggedin'])) {
+
+            if ($_SESSION['id'] == $this->authorId || $_SESSION['admin'] === '1') {               
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
     }
 
 }
