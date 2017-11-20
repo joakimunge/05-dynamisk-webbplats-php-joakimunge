@@ -4,7 +4,7 @@
             <div class="col col-12 tags">
                 <ul id="tags" class="tags__list">
                     <li>
-                        <a href="#" class="tags__btn"><i class="fa fa-star" aria-hidden="true"></i> Favorites</a>
+                        <a href="#" class="fav__btn"><i class="fa fa-star" aria-hidden="true"></i> Favorites</a>
                     </li>    
                     <?php foreach($tags as $tag): ?>
                         <li><a href="#"

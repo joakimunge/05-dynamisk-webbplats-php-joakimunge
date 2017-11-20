@@ -1,4 +1,7 @@
 const tags = document.querySelectorAll('.tags__btn');
+const favBtn = document.querySelector('.fav__btn');
+
+favBtn.addEventListener('click', getFavs);
 let ajaxData = [];
 
 for(let i = 0; i < tags.length; i++) {
@@ -37,12 +40,20 @@ function toggleFav(data) {
     newXhr(data, '/api/fav', false);
 }
 
+function getFavs(data) {
+    favBtn.classList.toggle('fav__btn--active');
+    tags.forEach(function(tag) {
+        tag.classList.remove('tags__btn--active');
+    });
+    newXhr(data, '/api/getfavs', true);
+}
+
 function newXhr(elem, route, render) {
     let xhr;
 
-    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+    if (window.XMLHttpRequest) { 
         xhr = new XMLHttpRequest();
-    } else if (window.ActiveXObject) { // IE 8 and older
+    } else if (window.ActiveXObject) { //IE
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
 

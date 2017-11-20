@@ -86,6 +86,23 @@ a.tags__btn:hover, a.tags__btn--active {
   background-color: #7359e5;
   color: #FFF; }
 
+a.fav__btn {
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  border-radius: 25px;
+  padding: 0.5em;
+  border: 2px solid #ff9e21;
+  color: #ff9e21;
+  font-size: 12px;
+  transition: all 0.5s ease;
+  min-width: 100px !important; 
+}
+
+a.fav__btn:hover, a.fav__btn--active {
+  background-color: #ff9e21;
+  color: #FFF; }
+
 #file {
   z-index: -1;
   width: 0.1px;

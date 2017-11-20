@@ -43,6 +43,7 @@ $router->post('/submit', 'SubmitController', 'submit');
 $router->post('/register', 'SignupController', 'register');
 $router->post('/api', 'ApiController', 'filterByTag');
 $router->post('/api/fav', 'ApiController', 'markFavorite');
+$router->post('/api/getfavs', 'ApiController', 'getFavorites');
 $router->post('/submitedit', 'PostController', 'submitEdit');
 $router->post('/deletepost', 'PostController', 'deletePost');
 //Populate routes

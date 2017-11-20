@@ -67,8 +67,6 @@ class ApiController extends AbstractController {
     public function markFavorite() {
         $db = new Database();
         $postId = $_POST['id'];
-        // $db->createOne('INSERT INTO user_fav SET entry_id = ?, user_id = ?', [$postId, $_SESSION['id']]);
-
         $rowExists = $db->query('SELECT * FROM user_fav WHERE entry_id = ? AND user_id = ?', [$postId, $_SESSION['id']]);
 
         if (count($rowExists) > 0) {
@@ -77,7 +75,18 @@ class ApiController extends AbstractController {
         }
 
         $db->query('INSERT INTO user_fav SET entry_id = ?, user_id = ?', [$postId, $_SESSION['id']]);
+    }
 
+    public function getFavorites() {
+        $db = new Database();
+        $this->entries = $db->query('SELECT * FROM user_fav JOIN entries ON user_fav.entry_id = entries.id WHERE user_id = ?', [$_SESSION['id']]);
+
+        if (count($this->entries) === 0) {
+            $this->noPostsFound();
+            return;
+        }
+
+        $this->renderBlogposts();
     }
 
 }
