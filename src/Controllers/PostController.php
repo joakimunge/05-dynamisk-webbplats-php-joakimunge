@@ -30,8 +30,6 @@ class PostController extends AbstractController
         $id = $this->request->getQueryString('id');
         $post = $db->query('SELECT * FROM entries WHERE id = ?', [$id]);
 
-        var_dump($post[0]['author_id']);
-
         if (!$this->isOwner($post[0]['author_id'])) {
             $this->redirect('/post?id=' . $id);
         }
