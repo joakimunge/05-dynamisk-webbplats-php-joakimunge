@@ -14,7 +14,16 @@ class Blogpost {
     private $authorId;
     private $tags = [];
 
-    public function __construct(string $title, string $content, string $author, string $date, string $image, int $id, int $authorId, $tags = '') {
+    public function __construct(
+        string $title, 
+        string $content, 
+        string $author, 
+        string $date, 
+        string $image, 
+        int $id, 
+        int $authorId, 
+        $tags = '') 
+        {
         $this->title = $title;
         $this->content = $content;
         $this->author = $author;

@@ -38,7 +38,9 @@ class SubmitController extends AbstractController {
 
             $db->dbconnection->beginTransaction();
             
-            $post = $db->query('INSERT INTO entries SET title=?, author=?, author_id=?, content=?, image=?, date=NOW(), tags = ?', [
+            $post = $db->query('INSERT INTO entries 
+            SET title=?, author=?, author_id=?, content=?, image=?, date=NOW(), tags = ?', 
+            [
                 $this->request->getPostValue('title'),
                 $_SESSION['first_name'],
                 $_SESSION['id'],

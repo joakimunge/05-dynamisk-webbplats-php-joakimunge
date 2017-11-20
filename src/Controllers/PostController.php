@@ -12,10 +12,20 @@ class PostController extends AbstractController
     {
         $db = new Database();
         $id = $this->request->getQueryString('id');
-        $entries = $db->query('SELECT (title), (content), (author), (date), (image), (id) FROM entries WHERE id = ? LIMIT 1', [$id]);
+        $entries = $db->query('SELECT (title), (content), (author), (date), (image), (id) 
+        FROM entries
+        WHERE id = ? 
+        LIMIT 1', [$id]);
         $posts = [];
         foreach ($entries as $entry) {
-            $modal = new Blogpost($entry['title'], $entry['content'], $entry['author'], $entry['date'], $entry['image'], $entry['id']);
+            $modal = new Blogpost(
+                $entry['title'], 
+                $entry['content'], 
+                $entry['author'], 
+                $entry['date'], 
+                $entry['image'], 
+                $entry['id']);
+                
             $posts[] = $modal;
         }
         $this->render('post', $posts);

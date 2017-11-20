@@ -26,7 +26,10 @@ class ApiController extends AbstractController {
             }
             $IN_STRING = substr($IN_STRING, 0, -1) . ')';
     
-            $this->entries = $db->query('SELECT * FROM entry_tag JOIN entries ON entry_tag.entry_id = entries.id WHERE tag_id IN ' . $IN_STRING, $tag);
+            $this->entries = $db->query('SELECT * FROM entry_tag 
+            LEFT JOIN tags ON entry_tag.tag_id = tags.Tag_ID 
+            JOIN entries ON entry_tag.entry_id = entries.id 
+            WHERE entry_tag.tag_id IN ' . $IN_STRING . ' ORDER BY entries.date DESC', $tag);
 
             if (count($this->entries) === 0) {
                 $this->noPostsFound();
@@ -34,7 +37,14 @@ class ApiController extends AbstractController {
             }
 
             foreach ($this->entries as $entry) {
-                $post = new Blogpost($entry['title'], $entry['content'], $entry['author'], $entry['date'], $entry['image'], $entry['id'], $entry['author_id']);
+                $post = new Blogpost($entry['title'], 
+                $entry['content'], 
+                $entry['author'], 
+                $entry['date'], 
+                $entry['image'], 
+                $entry['id'], 
+                $entry['author_id'], 
+                $entry['Tag_Title']);
                 $this->posts[] = $post;
             }
         
@@ -44,14 +54,25 @@ class ApiController extends AbstractController {
             return;
         }
 
-        $this->entries = $db->query('SELECT * FROM entries');
+        $this->entries = $db->query('SELECT * FROM entry_tag 
+        LEFT JOIN tags ON entry_tag.tag_id = tags.Tag_ID 
+        JOIN entries ON entry_tag.entry_id = entries.id 
+        ORDER BY entries.date DESC');
         $this->renderBlogposts();
         
     }
 
     public function renderBlogposts() {
         foreach ($this->entries as $entry) {
-            $post = new Blogpost($entry['title'], $entry['content'], $entry['author'], $entry['date'], $entry['image'], $entry['id'], $entry['author_id']);
+            $post = new Blogpost(
+                $entry['title'], 
+                $entry['content'], 
+                $entry['author'], 
+                $entry['date'], 
+                $entry['image'], 
+                $entry['id'], 
+                $entry['author_id'], 
+                $entry['Tag_Title']);
             $this->posts[] = $post;
         }
     
@@ -67,19 +88,32 @@ class ApiController extends AbstractController {
     public function markFavorite() {
         $db = new Database();
         $postId = $_POST['id'];
-        $rowExists = $db->query('SELECT * FROM user_fav WHERE entry_id = ? AND user_id = ?', [$postId, $_SESSION['id']]);
+        $rowExists = $db->query('SELECT * FROM user_fav 
+        WHERE entry_id = ? 
+        AND user_id = ?', 
+        [$postId, $_SESSION['id']]);
 
         if (count($rowExists) > 0) {
-            $db->query('DELETE FROM user_fav WHERE entry_id = ? AND user_id = ?', [$postId, $_SESSION['id']]);
+            $db->query('DELETE FROM user_fav 
+            WHERE entry_id = ? 
+            AND user_id = ?', 
+            [$postId, $_SESSION['id']]);
             return;
         }
 
-        $db->query('INSERT INTO user_fav SET entry_id = ?, user_id = ?', [$postId, $_SESSION['id']]);
+        $db->query('INSERT INTO user_fav 
+        SET entry_id = ?, user_id = ?', 
+        [$postId, $_SESSION['id']]);
     }
 
     public function getFavorites() {
         $db = new Database();
-        $this->entries = $db->query('SELECT * FROM user_fav JOIN entries ON user_fav.entry_id = entries.id WHERE user_id = ?', [$_SESSION['id']]);
+        $this->entries = $db->query('SELECT * FROM user_fav 
+        INNER JOIN entries ON user_fav.entry_id = entries.id
+        LEFT JOIN tags ON entries.tags = tags.Tag_ID
+        WHERE user_fav.user_id = ?
+        ORDER BY entries.date DESC', 
+        [$_SESSION['id']]);
 
         if (count($this->entries) === 0) {
             $this->noPostsFound();
