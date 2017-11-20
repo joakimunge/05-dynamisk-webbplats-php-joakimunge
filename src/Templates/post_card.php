@@ -8,6 +8,9 @@
         <h4 class="blog__post-title">
             <?php echo $post->getTitle(); ?>
         </h4>
+        <p class="blog__post-timestamp">
+            Posted under: <?php echo $post->getTags(); ?>
+        </p>
         <h5 class="blog__post-author">
             by <?php echo $post->getAuthor(); ?>
         </h5>

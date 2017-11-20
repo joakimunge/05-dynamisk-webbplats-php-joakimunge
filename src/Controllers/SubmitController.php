@@ -38,12 +38,13 @@ class SubmitController extends AbstractController {
 
             $db->dbconnection->beginTransaction();
             
-            $post = $db->query('INSERT INTO entries SET title=?, author=?, author_id=?, content=?, image=?, date=NOW();', [
+            $post = $db->query('INSERT INTO entries SET title=?, author=?, author_id=?, content=?, image=?, date=NOW(), tags = ?', [
                 $this->request->getPostValue('title'),
                 $_SESSION['first_name'],
                 $_SESSION['id'],
                 $this->request->getPostValue('content'),
-                $imagePath
+                $imagePath,
+                $this->request->getPostValue('tag')
             ]);
 
             $bridge = $db->query('INSERT INTO entry_tag SET entry_id = LAST_INSERT_ID(), tag_id = ?', [

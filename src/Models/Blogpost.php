@@ -11,17 +11,18 @@ class Blogpost {
     private $date;
     private $image;
     private $id;
-    private $tags;
     private $authorId;
+    private $tags = [];
 
-    public function __construct(string $title, string $content, string $author, string $date, string $image, int $id, int $authorId) {
+    public function __construct(string $title, string $content, string $author, string $date, string $image, int $id, int $authorId, $tags = '') {
         $this->title = $title;
         $this->content = $content;
         $this->author = $author;
         $this->date = $date;     
         $this->image = $image; 
         $this->id = $id;
-        $this->authorId = $authorId;        
+        $this->authorId = $authorId;
+        $this->tags[] = $tags;     
     }
 
     public function getTitle() {
