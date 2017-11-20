@@ -13,7 +13,7 @@ class IndexController extends AbstractController {
         $data = [];
 
         // SELECT * FROM entry_tag JOIN entries ON entry_tag.entry_id = entries.id WHERE tag_id = 4 <-- Select all from tag id
-        $entries = $db->query('SELECT * FROM entries');
+        $entries = $db->query('SELECT * FROM entries ORDER BY date DESC');
         foreach($entries as $entry) {
             $post = new Blogpost($entry['title'], $entry['content'], $entry['author'], $entry['date'], $entry['image'], $entry['id']);
             $posts[] = $post;
