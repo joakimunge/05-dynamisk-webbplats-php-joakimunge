@@ -32,6 +32,7 @@
         <?php if (isset($_SESSION['id'])) : ?>
             <span class="blog__icon blog__icon-fav <?php echo $post->getFavStatus(); ?>" onclick="toggleFav(<?php echo $post->getId(); ?>)" data-id="c<?php echo $post->getId(); ?>">
                 <i class="fa fa-star" aria-hidden="true"></i>
+                <?php echo $post->getFavs(); ?>
             </span>
         <?php endif ?>
     </div>

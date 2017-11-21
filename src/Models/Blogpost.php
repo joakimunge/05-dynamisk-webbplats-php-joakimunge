@@ -84,6 +84,13 @@ class Blogpost {
         return;
     }
 
+    public function getFavs() {
+        $db = new Database();
+        $favs = [];
+        $entries = $db->query('SELECT * FROM user_fav WHERE entry_id = ' . $this->id);
+        return count($entries);
+    }
+
     public function userCanEdit() {
         if (isset($_SESSION['loggedin'])) {
 
@@ -93,7 +100,6 @@ class Blogpost {
                 return false;
             }
         }
-        
     }
 
 }
